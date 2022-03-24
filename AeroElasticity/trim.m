@@ -3,7 +3,7 @@ close all
 clc
 
 %% Finite element settings
-Ne = 16;            % Number of elements
+Ne = 8;            % Number of elements
 Nn = Ne+1;          % Number of nodes
 Ndof = 3*(Ne+1);    % Number of degrees of freedom
 % The fixed degrees of freedom assume that you arranged the DOFs as:
@@ -161,28 +161,19 @@ alpha_0_rigid = x_solve_rigid(end) * 180 /pi;
 
 alpha_range = [alpha_range, alpha_0];
 alpha_range_rigid = [alpha_range_rigid, alpha_0_rigid];
-% % plotting wing deflection of trimmed state
-% deflection = zeros(Ne);
-% section = zeros(Ne);
-% for i=1:Ne
-%     deflection(i) = x_solve(3 + 3*(i - 1),1); %positive downwards 
-%     section(i) = i;
-% end
+% plotting wing deflection of trimmed state
+deflection = zeros(Ne);
+section = zeros(Ne);
+for i=1:Ne
+    deflection(i) = x_solve(1 + 3*(i - 1),1); %positive downwards 
+    section(i) = i;
+end
 
 end
+plot(section, deflection)
 plot(V_range, alpha_range, 'r-o'); hold on
 plot(V_range, alpha_range_rigid, 'b-+');
 legend('Flexibel','Rigid')
 xticks([20, 21, 22, 23, 24, 25])
-xlabel('Flightspeed freesteam velocity [ms^-1]') 
+xlabel('Flightspeed freesteam velocity [ms^{-1}]') 
 ylabel('Trim angle of attack [degrees]') 
-
-%% Reduce the system by applying the boundary conditions
-% Make sure you order the DOFs such that the first three are the clamped
-% displacement, bending rotation and torsional rotation
-Ar = A;
-% Ar(fxdof,fxdof) = [];
-
-%% Calculate the eigenvalues, evaluate and verify
-[Vr,Dr] = eig(Ar);
-Dr      = diag(Dr);
