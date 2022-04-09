@@ -4,7 +4,7 @@ import sympy as sy
 import pandas as pd
 
 #parameters
-M = 3600    #kg
+m = 3600    #kg
 n = 4       #blades
 r = 5.5     #m
 rpm = 475   #rpm
@@ -28,7 +28,7 @@ def get_vi(V_bar): #approximation
     return v_i
 
 def get_vi2(V_forward): #approximation
-    W = M * 9.81
+    W = m * 9.81
     D = C_d_fus * 1/2 * rho * S * V_forward**2
 
     #calculating alpha
@@ -74,7 +74,7 @@ plt.legend()
 plt.show()
 
 ###============ Q3 Performance calculation ============###
-W = M * 9.81
+W = m * 9.81
 P_i = W * np.sqrt(W/(2 * rho * np.pi * r**2))
 print("Ideal power P_i=", P_i * 1e-3, "[kW]")
 
