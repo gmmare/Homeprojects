@@ -63,8 +63,10 @@ for V in range(100):
     trim_state.loc[V] = [V, t_c, t_o]
 
 
-plt.plot(trim_state['V'], trim_state['theta_c'], label='t_c')
-plt.plot(trim_state['V'], trim_state['theta_o'], label='t_o')
+plt.plot(trim_state['V'], trim_state['theta_c'], label='Cyclic pitch')
+plt.plot(trim_state['V'], trim_state['theta_o'], label='collective pitch')
+plt.xlabel("Forward velocity [m/s]")
+plt.ylabel("Control actuation [degr]")
 plt.legend()
 plt.show()
 print("done")

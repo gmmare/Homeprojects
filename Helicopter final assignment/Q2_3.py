@@ -174,4 +174,7 @@ Get_Performance(P_res['V'], P_res['Ptot'], V_endurance, P_res['Ptot'][V_enduranc
 
 
 
+#blade element theory
+
+
 
