@@ -40,7 +40,7 @@ z(1)=0;
 %START INTEGRATION FOR 40 SECONDS
 aantal=400;
 teind=40;
-stap=(teind-t0)/aantal;
+stap=(teind-t0)/aantal
 
 for i=1:aantal 
 
@@ -72,7 +72,7 @@ mu(i)=vdiml(i)*cos(alfc(i));
 labc(i)=vdiml(i)*sin(alfc(i));
 
 %a1 Flapping calculus
-teller(i)=-16/lok*qdiml(i)+8/3*mu(i)*collect(i)-2*mu(i)*(labc(i)+labi(i));
+teller(i)=-16/lok*qdiml(i) + 8/3*mu(i)*collect(i) - 2*mu(i)*(labc(i)+labi(i));
 a1(i)=teller(i)/(1-.5*mu(i)^2);
 
 %the thrust coefficient
@@ -117,14 +117,15 @@ end;
 
 
 
-plot(t(1:400),longit*180/pi),xlabel('t (s)'),ylabel('longit grd'),grid,pause;
+% plot(t(1:400),longit*180/pi),xlabel('t (s)'),ylabel('longit grd')
 
-plot(t,u,t,pitch*180/pi),xlabel('t (s)'),ylabel('u(m)'), ylabel('pitch(deg)'),grid,pause;
-plot(t,x),xlabel('t (s)'),ylabel('x(m)'),grid,pause;
-plot(t,w),xlabel('t (s)'),ylabel('w(m)'),grid,pause;
-plot(t,q),xlabel('t (s)'),ylabel('q(m)'),grid,pause; 
-plot(t,labi),xlabel('t (s)'),ylabel('labi(m)'),grid,pause;
-plot(t,-z),xlabel('t (s)'),ylabel('h(m)'),grid,pause;
+plot(t,u,t,pitch*180/pi),xlabel('t (s)'),ylabel('u(m)'), ylabel('pitch(deg)')
+% plot(t,x),xlabel('t (s)'),ylabel('x(m)');
+% plot(t,w),xlabel('t (s)'),ylabel('w(m)');
+% plot(t,q),xlabel('t (s)'),ylabel('q(m)'); 
+% plot(t,labi),xlabel('t (s)'),ylabel('labi(m)');
+% plot(t,-z),xlabel('t (s)'),ylabel('h(m)');
+
 
 
 
