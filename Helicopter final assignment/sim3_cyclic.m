@@ -36,11 +36,19 @@ pitch(1)=pitch0;
 x(1)=x0;
 labi(1)=labi0;
 z(1)=0;
+% t(1)=t0;
+% u(1)=4;
+% w(1)=2;
+% q(1)=-0.4;
+% pitch(1)=0.03;
+% x(1)=x0;
+% labi(1)=labi0;
+% z(1)=0;
 
 %START INTEGRATION FOR 40 SECONDS
 aantal=400;
 teind=40;
-stap=(teind-t0)/aantal
+stap=(teind-t0)/aantal;
 
 for i=1:aantal 
 
@@ -113,13 +121,13 @@ x(i+1)=x(i)+stap*xdot(i);
 labi(i+1)=labi(i)+stap*labidot(i);
 z(i+1)=z(i)+stap*zdot(i);
 t(i+1)=t(i)+stap;
-end;
+end
 
 
 
 % plot(t(1:400),longit*180/pi),xlabel('t (s)'),ylabel('longit grd')
-
-plot(t,u,t,pitch*180/pi),xlabel('t (s)'),ylabel('u(m)'), ylabel('pitch(deg)')
+% plot(t(1:end-1),a1),xlabel('t (s)')
+plot(t,pitch*180/pi),xlabel('t (s)'),ylabel('u(m)'), ylabel('pitch(deg)')
 % plot(t,x),xlabel('t (s)'),ylabel('x(m)');
 % plot(t,w),xlabel('t (s)'),ylabel('w(m)');
 % plot(t,q),xlabel('t (s)'),ylabel('q(m)'); 

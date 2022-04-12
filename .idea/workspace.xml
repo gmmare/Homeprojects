@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d313b1b-d7d5-4862-b6f7-3a6f96fe4147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Helicopter final assignment/q4_pt2_v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Homeprojects_shared.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Homeprojects_shared.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helicopter final assignment/q4_pt2_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/q4_pt2_v2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helicopter final assignment/sim3_cyclic.m" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/sim3_cyclic.m" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +201,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605996436239</updated>
-      <workItem from="1649675326203" duration="8893000" />
+      <workItem from="1649675326203" duration="21323000" />
     </task>
     <task id="LOCAL-00001" summary="added other files">
       <created>1649319748856</created>
@@ -219,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649319797192</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="non shitty results finally">
+      <created>1649685630407</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649685630408</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -261,14 +266,33 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added other files" />
     <MESSAGE value="added more files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more files" />
+    <MESSAGE value="non shitty results finally" />
+    <option name="LAST_COMMIT_MESSAGE" value="non shitty results finally" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Helicopter final assignment/Q4_pt2.py</url>
+          <line>135</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2.coverage" NAME="Q4_pt2 Coverage Results" MODIFIED="1649684549196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
-    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q2_3.coverage" NAME="Q2_3 Coverage Results" MODIFIED="1649429714331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2.coverage" NAME="Q4_pt2 Coverage Results" MODIFIED="1649755216447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q2_3.coverage" NAME="Q2_3 Coverage Results" MODIFIED="1649699663687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
     <SUITE FILE_PATH="coverage/Homeprojects_shared$Cp_graph.coverage" NAME="Cp_graph Coverage Results" MODIFIED="1649335970218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4.coverage" NAME="Q4 Coverage Results" MODIFIED="1649440734344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
-    <SUITE FILE_PATH="coverage/Homeprojects_shared$q4_pt2_v2.coverage" NAME="q4_pt2_v2 Coverage Results" MODIFIED="1649680253415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$q4_pt2_v2.coverage" NAME="q4_pt2_v2 Coverage Results" MODIFIED="1649751464692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Cp_graph.py">
