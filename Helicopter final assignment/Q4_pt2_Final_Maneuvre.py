@@ -36,43 +36,6 @@ tau = 0.1 #time constant for lambdi_i
 # tau = 0.1 #time constant for lambdi_i
 
 #=============== Control scenarios ===============
-def ResponseThetaInput(t):
-
-    #theta input between 0.5 en 1
-    if t >= 0.5 and t < 1:
-        theta_cyclic = 1 * np.pi / 180
-
-    else:
-        theta_cyclic = 0
-
-    theta_collective = 6 * np.pi / 180
-
-    return theta_cyclic, theta_collective
-
-def Height_control(u, w, q, theta_f, h, delta_theta):
-
-    #height control
-    h_des = 50
-    K3 = 1
-    C_des = K3 * (h_des - h)
-
-    # Ascent rate control
-    #collective
-    theta_gen = 5 * np.pi / 180
-    K1 = 0.01
-    K2 = 0.01
-    # C_des = 4
-    C_actual = u * np.sin(theta_f) - w * np.cos(theta_f)
-    theta_collective = theta_gen + K1 * (C_des - C_actual) + K2 * delta_theta
-
-    #cyclic control(staying level)
-    theta_cyclic = 0.2 * theta_f + 0.2 * q
-
-    #change in C:
-    dC = C_des - C_actual
-
-    return theta_cyclic, theta_collective, dC
-
 def StopHover(u, w, q, theta_f, h, delta_theta):
 
     #height control
@@ -105,7 +68,7 @@ def StopHover(u, w, q, theta_f, h, delta_theta):
 
 #time series data & settings
 t0 = 0
-tmax = 40
+tmax = 60
 dt = 0.1
 
 # initial settings state variables
@@ -116,6 +79,8 @@ theta_f_init = 0.00  # fuselage pitch angle positive pitch up
 lambda_i_init = np.sqrt(m * 9.81 / (S * 2 * rho)) / vtip  # nondim inst ind velocity
 x_init = 0
 z_init = 0 #postive downwards
+h_des = 20 * 0.3048
+headwind  = 8 * 0.514444
 
 # initial settings input variables
 theta_cyclic_init = 0
@@ -181,7 +146,6 @@ for i, t in enumerate(t_range[:-1]):
             phi = phi + np.pi
 
     #setting control laws (PID)
-    # theta_cyclic, theta_collective, dC = Height_control(u, w, q, theta_f, h, delta_theta)
     theta_cyclic, theta_collective, dC = StopHover(u, w, q, theta_f, h, delta_theta)
 
     #calculating coefficients

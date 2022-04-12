@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d313b1b-d7d5-4862-b6f7-3a6f96fe4147" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_source.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_Final_Maneuvre.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_hover_transition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helicopter final assignment/q4_pt2_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/q4_pt2_v2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helicopter final assignment/sim3_cyclic.m" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/sim3_cyclic.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_hover_transition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_hover_transition.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +205,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605996436239</updated>
-      <workItem from="1649675326203" duration="31085000" />
+      <workItem from="1649675326203" duration="32687000" />
     </task>
     <task id="LOCAL-00001" summary="added other files">
       <created>1649319748856</created>
@@ -237,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649755494057</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed autopilot for hover and standstill from initial velocity">
+      <created>1649770985784</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649770985784</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -281,7 +286,8 @@
     <MESSAGE value="added more files" />
     <MESSAGE value="non shitty results finally" />
     <MESSAGE value="Fixed all issues, implementing control laws next" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed all issues, implementing control laws next" />
+    <MESSAGE value="fixed autopilot for hover and standstill from initial velocity" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed autopilot for hover and standstill from initial velocity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -296,7 +302,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2.coverage" NAME="Q4_pt2_source Coverage Results" MODIFIED="1649768002423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
-    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2_hover_transition.coverage" NAME="Q4_pt2_hover_transition Coverage Results" MODIFIED="1649770173253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2_hover_transition.coverage" NAME="Q4_pt2_hover_transition Coverage Results" MODIFIED="1649774302243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
     <SUITE FILE_PATH="coverage/Homeprojects_shared$Q2_3.coverage" NAME="Q2_3 Coverage Results" MODIFIED="1649699663687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
     <SUITE FILE_PATH="coverage/Homeprojects_shared$Cp_graph.coverage" NAME="Cp_graph Coverage Results" MODIFIED="1649335970218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4.coverage" NAME="Q4 Coverage Results" MODIFIED="1649440734344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
