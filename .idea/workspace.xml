@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d313b1b-d7d5-4862-b6f7-3a6f96fe4147" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_source.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_hover_transition.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helicopter final assignment/q4_pt2_v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/q4_pt2_v2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helicopter final assignment/sim3_cyclic.m" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/sim3_cyclic.m" afterDir="false" />
     </list>
@@ -60,32 +61,15 @@
   <component name="PropertiesComponent">
     <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Helicopter final assignment" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.Q4_pt2">
-    <configuration name="Cp_graph" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Homeprojects_shared" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Cp_graph.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Helicopter final assignment" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Q4_pt2_hover_transition">
     <configuration name="Q2_3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Homeprojects_shared" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,7 +114,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Q4_pt2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Q4_pt2_hover_transition" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Homeprojects_shared" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -143,7 +127,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_hover_transition.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Q4_pt2_source" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Homeprojects_shared" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Helicopter final assignment" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_source.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -176,18 +182,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.Q4_pt1" />
-      <item itemvalue="Python.Q4_pt2" />
-      <item itemvalue="Python.Cp_graph" />
       <item itemvalue="Python.Q2_3" />
       <item itemvalue="Python.q4_pt2_v2" />
+      <item itemvalue="Python.Q4_pt2_source" />
+      <item itemvalue="Python.Q4_pt2_hover_transition" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Q4_pt2" />
+        <item itemvalue="Python.Q4_pt2_hover_transition" />
+        <item itemvalue="Python.Q4_pt2_source" />
         <item itemvalue="Python.q4_pt2_v2" />
         <item itemvalue="Python.Q2_3" />
         <item itemvalue="Python.Q4_pt1" />
-        <item itemvalue="Python.Cp_graph" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +207,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605996436239</updated>
-      <workItem from="1649675326203" duration="21323000" />
+      <workItem from="1649675326203" duration="31085000" />
     </task>
     <task id="LOCAL-00001" summary="added other files">
       <created>1649319748856</created>
@@ -224,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649685630408</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed all issues, implementing control laws next">
+      <created>1649755494057</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649755494057</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -267,17 +280,11 @@
     <MESSAGE value="added other files" />
     <MESSAGE value="added more files" />
     <MESSAGE value="non shitty results finally" />
-    <option name="LAST_COMMIT_MESSAGE" value="non shitty results finally" />
+    <MESSAGE value="Fixed all issues, implementing control laws next" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed all issues, implementing control laws next" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Helicopter final assignment/Q4_pt2.py</url>
-          <line>135</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -288,11 +295,12 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2.coverage" NAME="Q4_pt2 Coverage Results" MODIFIED="1649755216447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2.coverage" NAME="Q4_pt2_source Coverage Results" MODIFIED="1649768002423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2_hover_transition.coverage" NAME="Q4_pt2_hover_transition Coverage Results" MODIFIED="1649770173253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
     <SUITE FILE_PATH="coverage/Homeprojects_shared$Q2_3.coverage" NAME="Q2_3 Coverage Results" MODIFIED="1649699663687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
     <SUITE FILE_PATH="coverage/Homeprojects_shared$Cp_graph.coverage" NAME="Cp_graph Coverage Results" MODIFIED="1649335970218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4.coverage" NAME="Q4 Coverage Results" MODIFIED="1649440734344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
-    <SUITE FILE_PATH="coverage/Homeprojects_shared$q4_pt2_v2.coverage" NAME="q4_pt2_v2 Coverage Results" MODIFIED="1649751464692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$q4_pt2_v2.coverage" NAME="q4_pt2_v2 Coverage Results" MODIFIED="1649757826200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Cp_graph.py">

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sy
 import pandas as pd
-
+#=============== data set ===============
 # ref data
 g = 9.81
 CL_alpha = 5.7
@@ -15,10 +15,41 @@ vtip = 200
 r = 7.32
 rpm_rad = vtip / r
 I_yy = 10615
-h = 1
+mast = 1
 S = np.pi * r ** 2
-tau = 0.1
+tau = 0.1 #time constant for lambdi_i
 
+# # own data set
+# g = 9.81
+# CL_alpha = 5.7
+# solidity = 0.075
+# gamma = 6
+# C_d_fus = 1.5
+# m = 1800
+# rho = 1.225
+# vtip = 375
+# r = 5.5
+# rpm_rad = vtip / r
+# I_yy = 10615
+# mast = 1
+# S = np.pi * r ** 2
+# tau = 0.1 #time constant for lambdi_i
+
+#=============== Control scenarios ===============
+def ResponseThetaInput(t):
+
+    #theta input between 0.5 en 1
+    if t >= 0.5 and t < 1:
+        theta_cyclic = 1 * np.pi / 180
+
+    else:
+        theta_cyclic = 0
+
+    theta_collective = 6 * np.pi / 180
+
+    return theta_cyclic, theta_collective
+
+#time series data & settings
 t0 = 0
 tmax = 40
 dt = 0.1
@@ -28,13 +59,15 @@ u_init = 0.0  # velocity X relative to body
 w_init = 0.0  # velocity Y relative to body
 q_init = 0.0  # pitch rate positive nose up
 theta_f_init = 0.00  # fuselage pitch angle positive pitch up
-lambda_i_init = np.sqrt(m * 9.81 / (S * 2 * rho)) / vtip  # nondimensionalised instanteneous induced velocity
+lambda_i_init = np.sqrt(m * 9.81 / (S * 2 * rho)) / vtip  # nondime inst ind velocity
+x_init = 0
+z_init = 0
 
 # initial settings input variables
 theta_cyclic_init = 0
 theta_collective_init = 6 * np.pi / 180
 
-# setting up state & control vectors
+# setting up state, control vectors, and position vectors
 state_init = np.array([u_init,
                        w_init,
                        q_init,
@@ -44,20 +77,23 @@ state_init = np.array([u_init,
 control_init = np.array([theta_cyclic_init,
                          theta_collective_init])
 
+pos_init = np.array([x_init,
+                     z_init]) #positive downwards
+
 # Creating time range for maneuver
 t_range = np.arange(t0, tmax + dt, dt)
 
 # initializing arrays for storing state data
 state_range = np.array([state_init])
 control_range = np.array([control_init])
-lam_i = []
-a1_check = []
-phi_check = []
+position_range = np.array([pos_init])
 
 for i, t in enumerate(t_range[:-1]):
 
+    #getting previous state
     state_v = state_range[-1]
     control_v = control_range[-1]
+    pos_v = position_range[-1]
 
     # getting state & control variables
     u = state_v[0]
@@ -66,21 +102,11 @@ for i, t in enumerate(t_range[:-1]):
     theta_f = state_v[3]
     lambda_i = state_v[4]
 
-    #attitude control:
-    theta_f_wish = 0
-
-    #cyclic laws
-    if t >= 0.5 and t < 1:
-        theta_cyclic = 1 * np.pi / 180
-
-    else:
-        theta_cyclic = 0
-
-    if t >= 15.0:
-        theta_cyclic = 0.2 * (theta_f - theta_f_wish) + 0.2 * q
-
-    #Collective laws
-    theta_collective = 6 * np.pi / 180
+    #getting position variables
+    x = pos_v[0]
+    z = pos_v[1]
+    c = u * np.sin(theta_f) - w * np.cos(theta_f)
+    h = -z
 
     # checking quadrant angle
     if u == 0:
@@ -94,22 +120,26 @@ for i, t in enumerate(t_range[:-1]):
         if u < 0:
             phi = phi + np.pi
 
+    #setting control laws (PID)
+    theta_cyclic, theta_collective = ResponseThetaInput(t)
+
+    #calculating coefficients
     V = np.sqrt((u ** 2) + (w ** 2))
     alpha_c = theta_cyclic - phi
-
     mu = (V / vtip) * np.cos(alpha_c)
     lambda_c = (V / vtip) * np.sin(alpha_c)
     qdiml = q/rpm_rad
 
+    #calculating tip path plane angle
     teller = -16/gamma * qdiml + 8/3*mu*theta_collective - 2*mu*(lambda_c+lambda_i)
     a1 = teller/(1-.5*mu**2)
 
-    # CT calculation #correct working
+    # CT calculation
     CT_bem = 0.25 * CL_alpha * solidity * ((2 / 3) * theta_collective * (1 + (3 / 2) * mu ** 2) -
                                            (lambda_c + lambda_i))
 
     CT_glau = 2 * lambda_i * np.sqrt(((V / vtip) * np.cos(alpha_c - a1)) ** 2 +
-                                 ((V / vtip) * np.sin(alpha_c - a1) + lambda_i) ** 2)
+                                     ((V / vtip) * np.sin(alpha_c - a1) + lambda_i) ** 2)
 
     T = CT_bem * rho * vtip ** 2 * S
 
@@ -120,11 +150,13 @@ for i, t in enumerate(t_range[:-1]):
     w_dot = g * np.cos(theta_f) - 0.5 * (C_d_fus / m) * rho * w * V - \
             (T / m) * np.cos(theta_cyclic - a1) + q * u
 
-    # g*cos(pitch(i))-cds/mass*.5*rho*w(i)*vv(i)-thrust(i)/mass*cos(helling(i))+q(i)*u(i)
-
-    q_dot = - (T / I_yy) * h * np.sin(theta_cyclic - a1)
+    q_dot = - (T / I_yy) * mast * np.sin(theta_cyclic - a1)
 
     theta_f_dot = q
+
+    x_dot = u * np.cos(theta_f) + w*np.sin(theta_f)
+
+    z_dot=-c
 
     # updating state vector
     state_v_new = np.array([u + u_dot * dt,
@@ -133,24 +165,26 @@ for i, t in enumerate(t_range[:-1]):
                             theta_f + theta_f_dot * dt,
                             lambda_i + ((CT_bem - CT_glau) / tau) * dt])
 
-
+    #updating position vector
+    pos_v_new = np.array([x + x_dot * dt,
+                          z + z_dot * dt])
 
     # updating state vector
     control_v_new = np.array([theta_cyclic,
                               theta_collective])
 
+    #adding to range for plotting
     state_range = np.append(state_range, [state_v_new], axis=0)
     control_range = np.append(control_range, [control_v_new], axis=0)
-
-    lam_i.append(lam_i)
-    a1_check.append(a1)
-    phi_check.append(phi)
+    position_range = np.append(position_range, [pos_v_new], axis=0)
 
 
+# plotting results
 # plt.plot(t_range[:-1], a1_check)
-plt.plot(t_range, state_range[:, 0], label='u')
+# plt.plot(t_range, state_range[:, 0], label='u')
 plt.plot(t_range, state_range[:, 3] * 180 / np.pi, label='theta_f')
 # plt.plot(t_range, control_range[:,1], label='longitudinal')
 # plt.plot(t_range, control_range[:,0], label='cycli')
+plt.plot(t_range, position_range[:,1], label='y_pos')
 plt.legend()
 plt.show()
