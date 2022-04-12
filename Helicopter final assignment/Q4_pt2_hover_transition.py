@@ -62,14 +62,13 @@ def StopHover(u, w, q, theta_f, h, x, delta_theta, delta_cyclic):
 
     K4 = 0.9  # pitch angle
     K5 = 1  # pitch rate
-    K6 = 0.02  # horizontal speed
-    K7 = 0.1  # distance\
+    K6 = 0.025  # horizontal speed
+    K7 = 0.12  # distance\
     # K7 = 0  # temp
-    K8 = 0.0015
-
+    K8 = 0.002
 
     # change in V
-    V_des = K7 * (x_des - x) + headwind
+    V_des = K7 * (x_des - x)
     dV = V_des - V_horizontal
     theta_cyclic = K4 * theta_f + K5 * q + K6 * dV + K8 * delta_cyclic
 
@@ -221,6 +220,7 @@ for i, t in enumerate(t_range[:-1]):
     position_range = np.append(position_range, [pos_v_new], axis=0)
 
 # plotting results
+fig1 = plt.figure()
 # plt.plot(t_range[:-1], a1_check)
 # plt.plot(t_range, state_range[:, 0], label='u')
 plt.plot(t_range, state_range[:, 3] * 180 / np.pi, label='theta_f')
@@ -229,4 +229,11 @@ plt.plot(t_range, state_range[:, 3] * 180 / np.pi, label='theta_f')
 plt.plot(t_range, position_range[:, 1] * -1, label='y_pos')
 plt.plot(t_range, position_range[:, 0], label='x_pos')
 plt.legend()
+
+fig2 = plt.figure()
+plt.plot(t_range, control_range[:,1] * 180 / np.pi, label='collective')
+plt.plot(t_range, control_range[:,0] * 180 / np.pi, label='cyclic')
+
+plt.legend()
 plt.show()
+

@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d313b1b-d7d5-4862-b6f7-3a6f96fe4147" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4d313b1b-d7d5-4862-b6f7-3a6f96fe4147" name="Default Changelist" comment="added stop hover with headwind">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_hover_transition.py" beforeDir="false" afterPath="$PROJECT_DIR$/Helicopter final assignment/Q4_pt2_hover_transition.py" afterDir="false" />
     </list>
@@ -243,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649770985784</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added stop hover with headwind">
+      <created>1649799071640</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649799071640</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -288,7 +294,8 @@
     <MESSAGE value="non shitty results finally" />
     <MESSAGE value="Fixed all issues, implementing control laws next" />
     <MESSAGE value="fixed autopilot for hover and standstill from initial velocity" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed autopilot for hover and standstill from initial velocity" />
+    <MESSAGE value="added stop hover with headwind" />
+    <option name="LAST_COMMIT_MESSAGE" value="added stop hover with headwind" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
