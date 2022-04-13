@@ -4,38 +4,37 @@ import sympy as sy
 import pandas as pd
 
 # =============== data set ===============
-# ref data
-g = 9.81
-CL_alpha = 5.7
-solidity = 0.075
-gamma = 6
-C_d_fus = 1.5
-m = 2200
-rho = 1.225
-vtip = 200
-r = 7.32
-rpm_rad = vtip / r
-I_yy = 10615
-mast = 1
-S = np.pi * r ** 2
-tau = 0.1  # time constant for lambdi_i
-
-
-# # own data set
+# # ref data
 # g = 9.81
 # CL_alpha = 5.7
 # solidity = 0.075
 # gamma = 6
-# C_d_fus = 1.2
-# m = 1800
+# C_d_fus = 1.5
+# m = 2200
 # rho = 1.225
-# vtip = 375
-# r = 5.5
+# vtip = 200
+# r = 7.32
 # rpm_rad = vtip / r
 # I_yy = 10615
 # mast = 1
 # S = np.pi * r ** 2
-# tau = 0.1 #time constant for lambdi_i
+# tau = 0.1  # time constant for lambdi_i
+
+# own data set
+g = 9.81
+CL_alpha = 5.7
+solidity = 0.075
+gamma = 9       #lock number
+C_d_fus = 1.2
+m = 3600
+rho = 1.225
+r = 5.5
+rpm_rad = 375 * 2 * np.pi /60
+vtip = rpm_rad * r
+I_yy = 12615
+mast = 1
+S = np.pi * r ** 2
+tau = 0.1 #time constant for lambdi_i
 
 # =============== Control scenarios ===============
 def StopHover(u, w, q, theta_f, h, x, delta_theta, delta_cyclic):
@@ -60,12 +59,11 @@ def StopHover(u, w, q, theta_f, h, x, delta_theta, delta_cyclic):
     V_horizontal = u * np.cos(theta_f) - w * np.sin(theta_f)
     x_des = 100
 
-    K4 = 0.9  # pitch angle
+    K4 = 0.8  # pitch angle
     K5 = 1  # pitch rate
     K6 = 0.025  # horizontal speed
-    K7 = 0.12  # distance\
-    # K7 = 0  # temp
-    K8 = 0.002
+    K7 = 0.12       # distance
+    K8 = 0.002      # Integral
 
     # change in V
     V_des = K7 * (x_des - x)
@@ -81,16 +79,16 @@ tmax = 60
 dt = 0.1
 
 # initial settings state variables
-u_init = 6  # velocity X relative to body
+u_init = 10  # velocity X relative to body
 w_init = 0.0  # velocity Y relative to body
 q_init = 0.0  # pitch rate positive nose up
-theta_f_init = 0.00  # fuselage pitch angle positive pitch up
+theta_f_init = 0.00 * np.pi/180  # fuselage pitch angle positive pitch up
 lambda_i_init = np.sqrt(m * 9.81 / (S * 2 * rho)) / vtip  # nondim inst ind velocity
 x_init = 0  # position relative to horizon
-z_init = 0  # postive downwards relative to horizon
+z_init = -30  # postive downwards relative to horizon
 
 # environment settings
-headwind = 4
+headwind = 7 * 0.514444
 
 # initial settings input variables
 theta_cyclic_init = 0
@@ -221,19 +219,15 @@ for i, t in enumerate(t_range[:-1]):
 
 # plotting results
 fig1 = plt.figure()
-# plt.plot(t_range[:-1], a1_check)
-# plt.plot(t_range, state_range[:, 0], label='u')
 plt.plot(t_range, state_range[:, 3] * 180 / np.pi, label='theta_f')
-# plt.plot(t_range, control_range[:,1] * 180 / np.pi, label='collective')
-# plt.plot(t_range, control_range[:,0] * 180 / np.pi, label='cyclic')
 plt.plot(t_range, position_range[:, 1] * -1, label='y_pos')
 plt.plot(t_range, position_range[:, 0], label='x_pos')
 plt.legend()
 
-fig2 = plt.figure()
-plt.plot(t_range, control_range[:,1] * 180 / np.pi, label='collective')
-plt.plot(t_range, control_range[:,0] * 180 / np.pi, label='cyclic')
+# fig2 = plt.figure()
+# plt.plot(t_range, control_range[:,1] * 180 / np.pi, label='collective')
+# plt.plot(t_range, control_range[:,0] * 180 / np.pi, label='cyclic')
+# plt.legend()
 
-plt.legend()
 plt.show()
 

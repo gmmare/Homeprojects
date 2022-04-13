@@ -18,7 +18,6 @@ rpm = 375
 ###============ Q2 induced velocity plot ============###
 def get_vi(V_bar): #approximation
 
-
     # lowsspeed flight:
     coeffs = [1, V_bar**2, -1]
     x = np.roots(coeffs)
@@ -27,7 +26,7 @@ def get_vi(V_bar): #approximation
 
     return v_i
 
-def get_vi2(V_forward): #approximation
+def get_vi2(V_forward):
     W = m * 9.81
     D = C_d_fus * 1/2 * rho * S * V_forward**2
 
@@ -46,30 +45,44 @@ def get_vi2(V_forward): #approximation
     #solving num, first defining the variable that will be solved for
     v_i_bar = sy.symbols('v_i_bar')
     ans = sy.solve(v_i_bar**2 * (vcos**2 + (vsin - v_i_bar)**2) - 1)
-
     return V_bar, -ans[0]
+
+def get_vi_high(V_bar):
+    v_i_high = 1/V_bar
+
+    return v_i_high
+
 
 #getting numerical points
 x_range = []
 y_range = []
-for i in range(0, 60):
+for i in range(0, 80):
     x, y = get_vi2((i))
     x_range.append(x)
     y_range.append(y)
 
 #getting points using approximations
-v_bar_range = np.arange(0,5,0.1)
+v_bar_range = np.arange(0,7,0.2)
 v_i_range = []
+
+#getting points using approximations
+v_bar_high = []
+v_i_high = []
 
 for i, V in enumerate(v_bar_range):
     v_i_range.append(get_vi(V))
 
+    if V >1:
+        v_bar_high.append(V)
+        v_i_high.append(get_vi_high(V))
+
 #plotting
-plt.scatter(v_bar_range, v_i_range, color='r', linewidth=0, label='Approximation')
+plt.scatter(v_bar_range, v_i_range, color='r', linewidth=0, label='Approximation Low speed')
 plt.plot(x_range, y_range, label='Solved numerically')
+plt.scatter(v_bar_high, v_i_high, color='g', linewidth=0, label='Approximation High speed')
 ax = plt.gca()
 plt.xlabel(r'$\bar{V}$ [-] Forward flight')
-plt.ylabel(r'$v_i$ [-] Induced velocity')
+plt.ylabel(r'$\bar{v_i}$ [-] Induced velocity')
 plt.legend()
 plt.show()
 

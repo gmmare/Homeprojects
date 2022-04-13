@@ -2,44 +2,43 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sympy as sy
 import pandas as pd
-#=============== data set ===============
-# ref data
-g = 9.81
-CL_alpha = 5.7
-solidity = 0.075
-gamma = 6
-C_d_fus = 1.5
-m = 2200
-rho = 1.225
-vtip = 200
-r = 7.32
-rpm_rad = vtip / r
-I_yy = 10615
-mast = 1
-S = np.pi * r ** 2
-tau = 0.1 #time constant for lambdi_i
-
-# # own data set
+# #=============== data set ===============
+# # ref data
 # g = 9.81
 # CL_alpha = 5.7
 # solidity = 0.075
 # gamma = 6
 # C_d_fus = 1.5
-# m = 1800
+# m = 2200
 # rho = 1.225
-# vtip = 375
-# r = 5.5
+# vtip = 200
+# r = 7.32
 # rpm_rad = vtip / r
 # I_yy = 10615
 # mast = 1
 # S = np.pi * r ** 2
 # tau = 0.1 #time constant for lambdi_i
 
+# own data set
+g = 9.81
+CL_alpha = 5.7
+solidity = 0.075
+gamma = 9       #lock number
+C_d_fus = 1.2
+m = 3600
+rho = 1.225
+r = 5.5
+rpm_rad = 375 * 2 * np.pi /60
+vtip = rpm_rad * r
+I_yy = 12615
+mast = 1
+S = np.pi * r ** 2
+tau = 0.1 #time constant for lambdi_i
+
 #=============== Control scenarios ===============
 def StopHover(u, w, q, theta_f, h, delta_theta):
 
     #height control
-    h_des = 0           #stay at same altitude
     K3 = 1              #gain on ascent rate
     C_des = K3 * (h_des - h)
 
@@ -48,7 +47,6 @@ def StopHover(u, w, q, theta_f, h, delta_theta):
     theta_gen = 5 * np.pi / 180
     K1 = 0.01 #proportional
     K2 = 0.01   #integral
-    # C_des = 4
     C_actual = u * np.sin(theta_f) - w * np.cos(theta_f)
     theta_collective = theta_gen + K1 * (C_des - C_actual) + K2 * delta_theta
 
@@ -58,9 +56,9 @@ def StopHover(u, w, q, theta_f, h, delta_theta):
     #horizontal speed control
     V_horizontal = u * np.cos(theta_f) - w * np.sin(theta_f)
     V_des = 0
-    K4 = 0.3    #pitch angle
-    K5 = 0.6    #pitch rate
-    K6 = 0.01   #horizontal speed
+    K4 = 0.8        # pitch angle
+    K5 = 1          # pitch rate
+    K6 = 0.025      # horizontal speed
 
     theta_cyclic = K4 * theta_f + K5 * q + K6 * (V_des - V_horizontal)
 
@@ -80,7 +78,7 @@ lambda_i_init = np.sqrt(m * 9.81 / (S * 2 * rho)) / vtip  # nondim inst ind velo
 x_init = 0
 z_init = 0 #postive downwards
 h_des = 20 * 0.3048
-headwind  = 8 * 0.514444
+
 
 # initial settings input variables
 theta_cyclic_init = 0
