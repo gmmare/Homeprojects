@@ -9,7 +9,7 @@ n = 4       #blades
 r = 5.5     #m
 rpm = 475   #rpm
 max_speed = 278 #kmh
-C_d_fus = 0.15 # [-]
+C_dS = 1.2 # [-]
 rho = 1.225
 S = 2 * 1.7
 c = 0.35
@@ -19,7 +19,7 @@ rpm_rad = rpm * 2 * np.pi / 60
 #trim calculations
 def Get_Trim(V):
     W = m * 9.81
-    D = C_d_fus * 1/2 * rho * S * V**2
+    D = C_dS * 1/2 * rho * V**2
 
     #calculating thrust coeff
     T = np.sqrt(W**2 + D**2)

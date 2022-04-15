@@ -143,9 +143,10 @@ for i, t in enumerate(t_range[:-1]):
 
 
 # plt.plot(t_range[:-1], a1_check)
-plt.plot(t_range, state_range[:, 0], label='u')
-plt.plot(t_range, state_range[:, 3] * 180 / np.pi, label='theta_f')
+plt.plot(t_range, state_range[:, 0], label='u [m/s]')
+plt.plot(t_range, state_range[:, 3] * 180 / np.pi, label='theta_f [degr]')
 # plt.plot(t_range, control_range[:,1], label='longitudinal')
 # plt.plot(t_range, control_range[:,0], label='cycli')
+plt.xlabel('Time [s]')
 plt.legend()
 plt.show()

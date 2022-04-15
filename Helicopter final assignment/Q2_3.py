@@ -10,6 +10,7 @@ r = 5.5     #m
 rpm = 475   #rpm
 max_speed = 278 #kmh
 C_d_fus = 0.15 # [-]
+C_dS = 1.2
 rho = 1.225
 S = 2 * 1.7
 c = 0.35
@@ -115,7 +116,7 @@ def get_power(V_forward):
     to_kw = 1e-3
     tail_rotor = 1.1
     tip_speed_ratio = V_forward/tip_speed
-    P_par = S * C_d_fus * 0.5 * rho * V_forward ** 3 * to_kw
+    P_par = C_dS * 0.5 * rho * V_forward ** 3 * to_kw
     P_profdrag = (solidity * C_d_profile / 8) * rho * (tip_speed**3) * np.pi * (r_effective ** 2) \
     * (1 + 4.65 * tip_speed_ratio**2) * to_kw
     V_bar, v_i = get_vi2(V_forward)
@@ -170,9 +171,10 @@ def Get_Performance(V_range, P_range, V_endurance, P_endurance):
     print("Speed for maximum range:", V_range[min_index], "[m/s], Ptot =", P_range[min_index], '[kW]')
 
     #plotting
-    plt.plot(V_range, P_range)
-    plt.plot([0, V_range[min_index], V_range[-1]], [0, P_range[min_index], V_range[-1] * (P_range[min_index]/V_range[min_index])])
-    plt.plot([V_endurance, V_endurance], [0, P_endurance], '--')
+    plt.plot(V_range, P_range, color='b')
+    plt.plot([0, V_range[min_index], V_range[-1]], [0, P_range[min_index], V_range[-1] * (P_range[min_index]/V_range[min_index])], color='r')
+    plt.plot([V_endurance, V_endurance], [0, P_endurance], '--', color='b')
+    plt.plot([V_range[min_index], V_range[min_index]], [0, P_range[min_index]], '--', color='r')
     plt.xlabel('Forward velocity [m/s]')
     plt.ylabel('Power [kW]')
     plt.show()

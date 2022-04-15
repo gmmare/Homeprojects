@@ -39,8 +39,8 @@ tau = 0.1 #time constant for lambdi_i
 # =============== Control scenarios ===============
 def StopHover(u, w, q, theta_f, h, x, delta_theta, delta_cyclic):
     # height control
-    h_des = 30  # stay at same altitude
-    K3 = 1  # gain on ascent rate
+
+    K3 = 0.2  # gain on ascent rate
     C_des = K3 * (h_des - h)
 
     # Ascent rate control
@@ -57,12 +57,12 @@ def StopHover(u, w, q, theta_f, h, x, delta_theta, delta_cyclic):
 
     # horizontal speed control
     V_horizontal = u * np.cos(theta_f) - w * np.sin(theta_f)
-    x_des = 100
+
 
     K4 = 0.8  # pitch angle
     K5 = 1  # pitch rate
     K6 = 0.025  # horizontal speed
-    K7 = 0.12       # distance
+    K7 = 0.175       # distance
     K8 = 0.002      # Integral
 
     # change in V
@@ -75,7 +75,7 @@ def StopHover(u, w, q, theta_f, h, x, delta_theta, delta_cyclic):
 
 # time series data & settings
 t0 = 0
-tmax = 60
+tmax = 100
 dt = 0.1
 
 # initial settings state variables
@@ -89,7 +89,8 @@ z_init = -30  # postive downwards relative to horizon
 
 # environment settings
 headwind = 7 * 0.514444
-
+x_des = 100
+h_des = 20 * 0.3048   # stay at same altitude
 # initial settings input variables
 theta_cyclic_init = 0
 theta_collective_init = 6 * np.pi / 180
@@ -219,9 +220,10 @@ for i, t in enumerate(t_range[:-1]):
 
 # plotting results
 fig1 = plt.figure()
-plt.plot(t_range, state_range[:, 3] * 180 / np.pi, label='theta_f')
-plt.plot(t_range, position_range[:, 1] * -1, label='y_pos')
-plt.plot(t_range, position_range[:, 0], label='x_pos')
+plt.plot(t_range, state_range[:, 3] * 180 / np.pi, label='theta_f [degr]')
+plt.plot(t_range, position_range[:, 1] * -1, label='y_pos [m]')
+plt.plot(t_range, position_range[:, 0], label='x_pos [m[')
+plt.xlabel("time [s]")
 plt.legend()
 
 # fig2 = plt.figure()
