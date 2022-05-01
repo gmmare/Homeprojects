@@ -15,14 +15,14 @@ for j=1:1:length(d)
 %   Analysis of valve spring.
     [svol,smass,bvol,matc,manc,Lmin,L2,k,F1,F2,Tau1,Tau2,freq1]=...
     springanalysis1(D(i),d(j),L0,L1,n,E,G,rho,Dv,h,p1,p2,nm,ncamfac,nne,matp,bldp);
-    funk(j,i) = k;    
+    funk(j,i) = Tau2;    
   end
 end
 
 % Contour plot of spring stiffness k
 subplot(221)
-contour(D, d, funk, [500 1000 2000 5000 10000 20000 50000 100000], 'ShowText', 'on')
-xlabel('D (m)'), ylabel('d (m)'), title('.      Contours of spring stiffness(N/m)')
+contour(D, d, funk, [1 2 3 4 5 6 7 8 9 10]*10^8, 'ShowText', 'on')
+xlabel('D (m)'), ylabel('d (m)'), title('Contours of spring shear stress at open valve(N/m^2)')
 grid
 
 % Plot of spring stiffness for constant d(1) = 0.002 
