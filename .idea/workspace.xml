@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d313b1b-d7d5-4862-b6f7-3a6f96fe4147" name="Default Changelist" comment="Finished the helicopter assignment" />
+    <list default="true" id="4d313b1b-d7d5-4862-b6f7-3a6f96fe4147" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/DesignOpt/Exercises/springopt1.m" beforeDir="false" afterPath="$PROJECT_DIR$/DesignOpt/Exercises/springopt1.m" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,11 +178,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Q4_pt2_Hover_stop" />
       <item itemvalue="Python.Q4_pt1" />
-      <item itemvalue="Python.q4_pt2_v2" />
-      <item itemvalue="Python.Q4_pt2_source" />
+      <item itemvalue="Python.Q4_pt2_Hover_stop" />
       <item itemvalue="Python.Q4_pt2_hover_transition_final_maneuver" />
+      <item itemvalue="Python.Q4_pt2_source" />
+      <item itemvalue="Python.q4_pt2_v2" />
     </list>
     <recent_temporary>
       <list>
@@ -203,6 +205,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605996436239</updated>
       <workItem from="1649675326203" duration="32687000" />
+      <workItem from="1651243274505" duration="257000" />
     </task>
     <task id="LOCAL-00001" summary="added other files">
       <created>1649319748856</created>
@@ -320,6 +323,18 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2.coverage" NAME="Q4_pt2_source Coverage Results" MODIFIED="1649768002423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2_hover_transition.coverage" NAME="Q4_pt2_hover_transition Coverage Results" MODIFIED="1649836042281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q2_3.coverage" NAME="Q2_3 Coverage Results" MODIFIED="1649855015553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Cp_graph.coverage" NAME="Cp_graph Coverage Results" MODIFIED="1649335970218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2_hover_transition_final_maneuver.coverage" NAME="Q4_pt2_hover_transition_final_maneuver Coverage Results" MODIFIED="1649864006415" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt1.coverage" NAME="Q4_pt1 Coverage Results" MODIFIED="1649861064034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2_source.coverage" NAME="Q4_pt2_source Coverage Results" MODIFIED="1649861214719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4_pt2_Hover_stop.coverage" NAME="Q4_pt2_Hover_stop Coverage Results" MODIFIED="1649862092459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$Q4.coverage" NAME="Q4 Coverage Results" MODIFIED="1649440734344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
+    <SUITE FILE_PATH="coverage/Homeprojects_shared$q4_pt2_v2.coverage" NAME="q4_pt2_v2 Coverage Results" MODIFIED="1649861089179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helicopter final assignment" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Cp_graph.py">

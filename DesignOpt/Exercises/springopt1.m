@@ -38,8 +38,8 @@ contour(D, d, funk_tau, [0.01 0.01], 'b--')
 % forces
 contour(D, d, funk_f1, [0.0 0.0], 'r')
 contour(D, d, funk_f1, [0.01 0.01], 'r--')
-contour(D, d, funk_f2, [0.0 0.0], 'r')
-contour(D, d, funk_f2, [0.01 0.01], 'r--')
+contour(D, d, funk_f2, [0.0 0.0], 'g')
+contour(D, d, funk_f2, [0.01 0.01], 'g--')
 % length
 contour(D, d, funk_length, [0.0 0.0], 'k')
 contour(D, d, funk_length, [0.01 0.01], 'k--')
@@ -73,9 +73,8 @@ f2 = F2min/F2 -1;
 L_spring = Lmin/L2 - 1;
 
 % calculating freq
-% nm is motor speed in rev per second, eigenfreqyency must be higher to
-% prevent vibrationsso; freq1 > nm
-
-freq_s = nm/freq1 - 1;
+% nm is motor speed in rev per second, eigenfreqyency must not be equal to 
+% a multiple of the groudn frequency so modulus(freq1/nm) / nm < 1
+freq_s =  mod(freq1, nm) / nm - 1 ;
 end
 
