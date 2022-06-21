@@ -8,9 +8,7 @@ function [I_xx] = GetInertia(x)
 % 5 Flange thickness front spar (continuous)
 % 6 Flange thickness aft spar (continuous)
 %   Detailed explanation goes here
-
-% flange width:
-flange_width = 0.042;
+opt_params;
 
 % front spar
 t_spar_front = GetThickness(x(1));
