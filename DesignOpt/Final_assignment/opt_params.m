@@ -35,9 +35,8 @@ I_xx_ref = 2.8521e-07; %m^4
 A_ref = 0.0352; %m^2
 p_ref = -0.003528; %[-]
 W_ref = 3.9968e-04; % [m^2]based on crossection of structural parts
-h_ref = 0.419722956247049 ; %max heave
 
 % objective weight:
 k = 0.5;
-r = 200;
+r = 600;
 

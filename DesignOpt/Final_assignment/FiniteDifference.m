@@ -5,7 +5,8 @@ function [sq] = FiniteDifference(x, hi)
 df = zeros(1, 6);
 
 %local objective value
-f_local = objective(x);
+[f, b1, b2] = objective(x);
+f_local = f+ b1+ b2;
 
 for i=1:length(x)
 
@@ -15,12 +16,13 @@ for i=1:length(x)
 
     x_new = x + dx;
     %calculating new objective value
-    f_new = objective(x_new);
+    [f, b1, b2] = objective(x_new);
+    f_new = f+ b1+ b2;
     df(i) = (f_new - f_local)/hi;
 end
 
 sq = -df;
-sq = sq/norm(sq);
+sq = sq/norm(sq) ;
 
 end
 
