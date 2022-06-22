@@ -27,9 +27,9 @@ f_obj = (1-k)*(A/A_ref) + k*(W/W_ref);
 % h_max = constraint2(x)
 % g1 = h_max/h_ref - 1;
 % g2 = 0.6 * h_ref/h_max - 1;
-p_max = constraints(x);
+
 %flutter
-g1 = p_max/p_ref - 1
+
 
 
 %calculating barrier function

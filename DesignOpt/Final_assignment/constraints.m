@@ -1,4 +1,4 @@
-function [p_max] = constraints(xdes)
+function [p_max] = constraints(x)
 % x = [0.1 0.6 0.0012 0.0012 0.0015 0.0015];
 %% Finite element settings
 Ne = 25;            % Number of elements
@@ -15,7 +15,7 @@ span   = 16; %half span
 L      = span/Ne;
 E      = 70e9;
 G      = E/2/(1+0.3);
-Ixx    = GetInertia(xdes);
+Ixx    = GetInertia(x);
 J      = 1e4/G;
 
 Itheta = 0.1;

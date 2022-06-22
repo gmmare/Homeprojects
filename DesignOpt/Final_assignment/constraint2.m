@@ -1,7 +1,7 @@
 % xq = [0.1 0.6 0.0012 0.0012 0.0015 0.0015];
-% 
+
 % constraint2_test(xq)
-function [h_max] = constraint2(x_des)
+function [h_max] = constraint2(x)
 %% Finite element settings
 div_list = [];
 
@@ -29,7 +29,7 @@ span   = 16; %half span
 L      = span/Ne;
 E      = 70e9;
 G      = E/2/(1+0.3);
-Ixx    = GetInertia(x_des);
+Ixx    = GetInertia(x);
 J      = 1e4/G;
 
 Itheta = 0.1;
@@ -104,7 +104,7 @@ lamda = 0.5 * rho * v_div^2;
 M = Ks(4:end, 4:end) - lamda*Ka_steady(4:end, 4:end);
 x = null(M);
 heave = [];
-for i=1:k
+for i=1:length(k)
     heave = [heave, -x(1 + 3*(i - 1))];
 end
 
