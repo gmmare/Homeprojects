@@ -1,0 +1,24 @@
+opt_params
+xq = [0.1 0.6 0.0012 0.0012 0.0015 0.0015];
+hi=1e-08;
+sq = FiniteDifference(xq, hi);
+
+xc1 = [lb(1):0.2:ub(1)];
+xc2 = [lb(2):0.2:ub(2)];
+
+for j=1:1:length(xc1)
+  for i=1:1:length(xc2)
+%   Analysis of valve spring.
+    xq(1) = xc1(j);
+    xq(2) = xc2(i);
+    [f, b1, b2] = objective
+     fobj(j,i) = ((k-ktarget)/ktarget)^2 + w*((freq1-frtarget)/frtarget)^2; 
+     stiffness(j,i) = k;
+     freq(j,i) = freq1;
+  end
+end
+
+plot(alpha, g1_lst, 'DisplayName', 'g1')
+hold on
+plot(alpha, g2_lst, 'DisplayName', 'g2')
+legend

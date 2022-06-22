@@ -1,31 +1,44 @@
-opt_params
+clf, hold off, clear
+format long
+
+opt_params;
 xq = [0.1 0.6 0.0012 0.0012 0.0015 0.0015];
 hi=1e-08;
 sq = FiniteDifference(xq, hi);
-for i=1:length(xq)
-    if sq(i) <0
-        dif_upper(i) = (xq(i) - lb(i))/abs(sq(i));
-        dif_lower(i) = (xq(i) - ub(i))/abs(sq(i));
-    else
-        dif_upper(i) = (ub(i) - xq(i))/abs(sq(i));
-        dif_lower(i) = (lb(i) - xq(i))/abs(sq(i));
-    end
+
+xc1 = linspace(lb(1), ub(1), 20);
+xc2 = linspace(lb(2), ub(2), 20);
+
+for j=1:length(xc1)
+  for i=1:length(xc2)
+%   Analysis of valve spring.
+    xq(1) = xc1(j);
+    xq(2) = xc2(i);
+    [f, b1, b2, b3] = objective(xq);
+    obj_val(j , i) = real(f); 
+    barrier1(j , i) = real(b1);
+    barrier2(j , i) = real(b2);
+    barrier3(j , i) = real(b3);
+  end
 end
 
-alpha = linspace(max(dif_lower), min(dif_upper), 20);
-for i=1:length(alpha)
-        % line searching
-    x_des = xq + alpha(i)*sq; 
-
-    %objective value
-    [f, b1, b2] = objective(x_des);
-    f_lst(i) = f;
-    g1_lst(i) = g1;
-    g2_lst(i) = g2;
-
-end
-
-plot(alpha, g1_lst, 'DisplayName', 'g1')
+contour(xc1, xc2, obj_val, 'ShowText', 'on')
+xlabel('xc1'), ylabel('xc2'), ...
+   title('Figure 1     Objective value for k = 0.5')
 hold on
-plot(alpha, g2_lst, 'DisplayName', 'g2')
-legend
+
+%barrier 1
+contour(xc1, xc2, barrier1, [0.00 0.00], 'b', 'ShowText', 'on')
+contour(xc1, xc2, barrier1, [0.01 0.01], 'b--', 'ShowText', 'on')
+
+%barrier 2
+% contour(xc1, xc2, barrier2,  'r', 'ShowText', 'on')
+% contour(xc1, xc2, barrier2, [0.01 0.01], 'r--', 'ShowText', 'on')
+% 
+% %barrier 3
+% contour(xc1, xc2, barrier3,  'g', 'ShowText', 'on')
+% contour(xc1, xc2, barrier3, [0.05 0.05], 'g--', 'ShowText', 'on')
+
+
+
+grid

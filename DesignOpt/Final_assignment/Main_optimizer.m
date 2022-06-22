@@ -13,28 +13,36 @@ design vector x
 
 %initial design
 xq = [0.1 0.6 0.0012 0.0012 0.0015 0.0015];
-objective(xq);
 
+%generating new designs
 lb = [0.05 0.5 0.00075, 0.00075, 0.001, 0.001];
 ub = [0.40 0.8 0.0015 0.0015 0.002 0.002];
+
+des_k = 0.6;
+for i=1:length(lb)
+    xq(i) = des_k * (ub(i) - lb(i)) + lb(i);
+end
+
+objective(xq);
+
 obj_old = objective(xq);
 
 %getting bounds for optimizer
 lb = zeros(6);
 ub = ones(6);
 
-tolF = 0.00001;
+tolF = 1e-10;
 
 %beginning function value for ending criteria
 diff_fval = 1;
 fval = 1;
 cycle = 0;
 % Loop over optimization cycle:
-while cycle < 10
+while diff_fval >tolF
     
    	fval_old = fval;
     
-    cycle = cycle + 1;
+    cycle = cycle + 1
     % Forward finite diffence gradients of objective function and constraints
     hi=1e-8;        %step size when line searching
     
@@ -58,29 +66,27 @@ while cycle < 10
         end
     end
     
-%     dif_min
-%     dif_up
     %Line search (note the lower and upper bound of alfhaq):
     [alphaq,fval,exitflag] = ...
            fminbnd(@(alpha) objective_mask(alpha, xq,sq), max(dif_lower), min(dif_upper), [options]);
-    
-%     % Optimization results:
-%     alphaq         % step size
-%     fval           % value objective function
-    
     
     % Computation of result of line search (new design point):
     for i=1:length(xq)
         xq(i) = xq(i) + alphaq*sq(i);
     end
     
-    
-    diff_fval = abs(fval - fval_old);
-    
+    %function eval
+    diff_fval = abs(1 - fval/fval_old);
+    xq_new = xq;
 end 
+disp('Done')
+disp('check constraints')
+check_flut = constraints(xq_new)
+check_heave = constraint2(xq_new)
 
-check_constraint = constraint2(xq)
-relative = check_constraint/p_ref
+disp('relative value constraints')
+relative_flut = check_flut/p_ref
+relative_heave = check_heave/h_ref
 
-improvement = objective(xq)/obj_old
+improvement =  (1 - objective(xq)/obj_old) * 100
 
