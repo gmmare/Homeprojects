@@ -1,19 +1,16 @@
-function [f, b1, b2] = objective(x)
+function [f, b1, b2, g1, g2] = objective(x)
 opt_params;
 
 %analysis tools
 W = GetWeight(x);
 A = GetVolume(x);
-
-%objective value
-f_obj = (1-k)*(A/A_ref) + k*(W/W_ref);
-
-%flutter constraint
-p_max = constraints(x);
-
-%heave constraint
 I_xx = GetInertia(x);
 
+%objective value
+% f_obj = c * (1-k)*(A_ref/A) + k*(I_xx_ref/I_xx);
+f_obj = c * (1-k)*(A_ref/A) + k*(W/W_ref);
+%flutter constraint
+p_max = constraints(x);
 
 %constraint forumlation
 g1 = 1 - p_max/p_ref;
@@ -21,7 +18,7 @@ if p_max > p_ref
     g1 = abs(p_max/p_ref);
 end
 
-g2 = I_xx/I_xx_ref - 1;
+g2 = 0.8 * I_xx_ref/(I_xx) - 1;
 
 
 %calculating barrier function

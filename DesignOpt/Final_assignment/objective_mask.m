@@ -6,7 +6,7 @@ opt_params;
 x_des = xq + alpha*sq; 
 
 %objective value
-[f, b1, b2] = objective(x_des);
+[f, b1, b2, g1, g2] = objective(x_des);
 f_sum = f + b1 + b2;
 end
 

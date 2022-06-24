@@ -11,12 +11,12 @@ design vector x
 6 Flange thickness aft spar (continuous)
 %}
 
-%initial design
-xq = [0.1 0.6 0.0012 0.0012 0.0015 0.0015];
-
-%generating new designs
-lb = [0.05 0.5 0.00075, 0.00075, 0.001, 0.001];
-ub = [0.40 0.8 0.0015 0.0015 0.002 0.002];
+% %initial design
+% xq = [0.1 0.6 0.0012 0.0012 0.0015 0.0015];
+% 
+% %generating new designs
+% lb = [0.05 0.5 0.00075, 0.00075, 0.001, 0.001];
+% ub = [0.40 0.8 0.0015 0.0015 0.002 0.002];
 
 des_k = 0.9;
 for i=1:length(lb)
@@ -25,8 +25,6 @@ end
 
 %design starting point
 obj_old = objective(xq);
-
-
 
 %beginning function value for ending criteria
 tolF = 1e-10;diff_fval = 1;
