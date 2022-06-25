@@ -25,8 +25,7 @@ end
 %%
 hold off
 % plotting
-contour(xc1, xc2, f_tot, 'ShowText', 'on')
-xlabel('xc1 [m]'), ylabel('xc2 [m]'), title('objective function contour plot')
+contour(xc1, xc2, f_obj, 'ShowText', 'on')
 xlabel('xc1 [m]'), ylabel('xc2 [m]'), title('objective function contour plot')
 grid
 hold on

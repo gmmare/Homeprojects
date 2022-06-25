@@ -11,7 +11,6 @@ design vector x
 
 % xq = [0.1 0.6 0.0012 0.0012 0.0015 0.0015];
 
-
 % flange width:
 flange_width = 0.042;
 

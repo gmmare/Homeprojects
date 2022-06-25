@@ -35,7 +35,7 @@ while(diff_fval>0 && cycle<51)
     
     % calculating finite difference gradient for the objective function +
     % barriers
-    sq = FiniteDifference(xq, hi);
+    sq = FiniteDifference_reduced(xq, hi);
     
     %getting list for plotting
     xc1_lst(cycle) = xq(1);
@@ -59,7 +59,7 @@ while(diff_fval>0 && cycle<51)
     
     %Line search (note the lower and upper bound of alfhaq):
     [alphaq,fval,exitflag] = ...
-           fminbnd(@(alpha) objective_mask(alpha, xq, sq), max(dif_lower), 0.5 * min(dif_upper), [options]);
+           fminbnd(@(alpha) objective_mask(alpha, xq,sq), max(dif_lower), 0.5 * min(dif_upper), [options]);
     
     alphaq = alphaq*0.5;
     % Computation of result of line search (new design point):
