@@ -26,7 +26,7 @@ fval = 1;
 cycle = 0;
 
 % Loop over optimization cycle:
-while(diff_fval>0 && cycle<51)
+while(diff_fval>tolF && cycle<51)
    	fval_old = fval;
     cycle = cycle + 1;
 

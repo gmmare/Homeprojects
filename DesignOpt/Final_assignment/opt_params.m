@@ -39,7 +39,7 @@ p_ref = -0.003528; %[-]
 W_ref = 3.9968e-04; % [m^2]based on crossection of structural parts
 
 % objective weight:
-k = 0.5;
+k = 0.5; 
 c = 0.25; %correction factor weights
-r = 800;
+r = 400;
 

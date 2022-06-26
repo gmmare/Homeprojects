@@ -16,7 +16,7 @@ for i=1:length(x)
 
     x_new = x + dx;
     %calculating new objective value
-    [f, b1, b2,g1, g2] = objective(x_new);
+    [f, b1, b2, g1, g2] = objective(x_new);
     f_new = f+ b1+ b2;
     df(i) = (f_new - f_local)/hi;
 end

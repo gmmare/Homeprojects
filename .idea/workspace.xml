@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d313b1b-d7d5-4862-b6f7-3a6f96fe4147" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DesignOpt/Final_assignment/Readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignOpt/Final_assignment/FiniteDifference.m" beforeDir="false" afterPath="$PROJECT_DIR$/DesignOpt/Final_assignment/FiniteDifference.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignOpt/Final_assignment/Main_optimizer.asv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignOpt/Final_assignment/Main_optimizer.m" beforeDir="false" afterPath="$PROJECT_DIR$/DesignOpt/Final_assignment/Main_optimizer.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignOpt/Final_assignment/Main_optimizer_reduced.m" beforeDir="false" afterPath="$PROJECT_DIR$/DesignOpt/Final_assignment/Main_optimizer_reduced.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignOpt/Final_assignment/SensitivityAnalysis.m" beforeDir="false" afterPath="$PROJECT_DIR$/DesignOpt/Final_assignment/SensitivityAnalysis.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignOpt/Final_assignment/check_alfa.m" beforeDir="false" afterPath="$PROJECT_DIR$/DesignOpt/Final_assignment/ProblemAnalysis.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignOpt/Final_assignment/objective.m" beforeDir="false" afterPath="$PROJECT_DIR$/DesignOpt/Final_assignment/objective.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DesignOpt/Final_assignment/opt_params.m" beforeDir="false" afterPath="$PROJECT_DIR$/DesignOpt/Final_assignment/opt_params.m" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Blank Requirements File" />
       </list>
     </option>
   </component>
@@ -208,6 +218,7 @@
       <workItem from="1651243274505" duration="257000" />
       <workItem from="1655932074867" duration="7000" />
       <workItem from="1655988428024" duration="66000" />
+      <workItem from="1656239164272" duration="449000" />
     </task>
     <task id="LOCAL-00001" summary="added other files">
       <created>1649319748856</created>

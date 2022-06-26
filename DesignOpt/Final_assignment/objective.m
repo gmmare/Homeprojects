@@ -20,7 +20,6 @@ end
 g2 = 0.8 * I_xx_ref/(I_xx) - 1;
 
 mult_barrier = 12;
-% mult_barrier = 0;
 %calculating barrier function
 b1 = real( - (1/r) * log(-g1));
 b2 = mult_barrier *real( - (1/r) * log(-g2));
